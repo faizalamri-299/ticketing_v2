@@ -1,0 +1,22 @@
+<?php
+
+namespace common\models;
+
+use yii\base\Model;
+use yii\web\UploadedFile;
+
+class BitDiffTime extends Model
+{
+    function dateDifference($pc_mod_tarikh_mula , $pc_mod_tarikh_tamat)
+    {
+        $dateMula = date_create($pc_mod_tarikh_mula);
+        $dateTamat = date_create($pc_mod_tarikh_tamat);
+
+        $interval = date_diff($dateMula, $dateTamat);
+
+        return $interval;
+
+    }
+}  
+
+?>
